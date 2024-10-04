@@ -1,13 +1,21 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import MainNavbar from "../../Components/roots/MainNavbar";
 import Selections from "../../Components/ShopingBag/Selections";
 import OrderSummary from "../../Components/ShopingBag/OrderSummary";
 
-const ContentContainer = styled(Box)({
+const ContentContainer = styled(Box)(({ theme }) => ({
     position: "relative",
     zIndex: 2,
-});
+    fontSize: "1rem",
+
+    [theme.breakpoints.down("md")]: {
+        fontSize: ".9rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+        fontSize: ".7rem",
+    },
+}));
 const FixedBanner = styled(Box)(({ theme }) => ({
     height: "45vh",
     position: "fixed",
@@ -28,9 +36,17 @@ const FixedBanner = styled(Box)(({ theme }) => ({
 const Wraper = styled(Box)(({ theme }) => ({
     height: "45vh",
     backgroundColor: "transparent",
+    position: "relative",
 
     [theme.breakpoints.down("lg")]: {
         height: "35vh",
+    },
+    "&::after": {
+        content: "''",
+        backgroundColor: "#0000003b",
+        height: "100%",
+        width: "100%",
+        position: "absolute",
     },
 }));
 const ContetntSubContainer = styled(Box)({
@@ -79,19 +95,38 @@ const Contents = styled(Box)(({ theme }) => ({
     },
 }));
 
+const MainHead = styled(Typography)(({ theme }) => ({
+    textTransform: "uppercase",
+    fontSize: "3em",
+    color: "white",
+    position: "absolute",
+    bottom: "2rem",
+    left: "50%",
+    transform: "translate(-50%)",
+    zIndex: "2",
+    widht: "fit-content",
+    textAlign: "center",
+}));
+
 const ShopingBag = () => {
+    const theme = useTheme();
+
+    const isSmallerScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+    const imgSrc = isSmallerScreen
+        ? "https://res.cloudinary.com/dnrmw8eif/image/upload/v1727811010/bannergirl1_p7x2mc.avif"
+        : "https://res.cloudinary.com/dnrmw8eif/image/upload/v1727799524/guccibanner_wwyrdi.avif";
+
     return (
         <>
             <MainNavbar />
-            <FixedBanner>
-                <img
-                    className="picture"
-                    src="https://res.cloudinary.com/dnrmw8eif/image/upload/v1727799524/guccibanner_wwyrdi.avif"
-                    alt=""
-                />
+            <FixedBanner className="fixed_banner">
+                <img className="picture" src={imgSrc} alt="" />
             </FixedBanner>
             <ContentContainer>
-                <Wraper></Wraper>
+                <Wraper className="banner_wrapper">
+                    <MainHead>shopping bag</MainHead>
+                </Wraper>
                 <ContetntSubContainer>
                     <Contents>
                         <Selections />
