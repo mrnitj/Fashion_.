@@ -17,7 +17,7 @@ const ContentContainer = styled(Box)(({ theme }) => ({
     },
 }));
 const FixedBanner = styled(Box)(({ theme }) => ({
-    height: "45vh",
+    height: "50vh",
     position: "fixed",
     width: "100%",
     color: "white",
@@ -34,7 +34,7 @@ const FixedBanner = styled(Box)(({ theme }) => ({
     },
 }));
 const Wraper = styled(Box)(({ theme }) => ({
-    height: "45vh",
+    height: "50vh",
     backgroundColor: "transparent",
     position: "relative",
 
@@ -51,7 +51,6 @@ const Wraper = styled(Box)(({ theme }) => ({
 }));
 const ContetntSubContainer = styled(Box)({
     backgroundColor: "white",
-    height: "100vh",
     position: "relative",
     width: "100%",
 
