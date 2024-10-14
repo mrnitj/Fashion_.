@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MainContainer = styled(Box)({
-    width: "100%",
-    // backgroundColor:'#c28383',
+    flex: 1,
     fontSize: "1rem",
     padding: "0 .5rem",
     fontFamily: "mina",
@@ -39,8 +38,13 @@ const ItemCard = styled(Box)(({ theme }) => ({
 const ImgSection = styled(Box)(({ theme }) => ({
     minWidth: "12.938rem",
     width: "12.938rem",
-    backgroundColor: "yellow",
     minHeight: "15rem",
+
+    "& .itm_image": {
+        height: "100%",
+        width: "100%",
+        objectFit: "cover",
+    },
 }));
 const Desc_QtyContainer = styled(Box)(({ theme }) => ({
     width: "100%",
@@ -88,7 +92,12 @@ const Price = styled(Typography)(({ theme }) => ({}));
 
 const AvailabilityConainer = styled(Box)(({ theme }) => ({}));
 
-const ActionContainer = styled(Box)(({ theme }) => ({}));
+const ActionContainer = styled(Box)(({ theme }) => ({
+    marginTop: "1rem",
+    [theme.breakpoints.down("md")]: {
+        margin: "0",
+    },
+}));
 const Actions = styled(Typography)(({ theme }) => ({
     textTransform: "uppercase",
     color: "#000",
@@ -174,7 +183,13 @@ const Selections = () => {
             <MainHead>your selections</MainHead>
             {/* <CardContainer> */}
             <ItemCard>
-                <ImgSection></ImgSection>
+                <ImgSection>
+                    <img
+                        className="itm_image"
+                        src="https://media.gucci.com/style/White_South_0_160_316x316/1715358827/800265_FADSC_9852_001_100_0000_Light-Medium-backpack-with-Gucci-logo.jpg"
+                        alt=""
+                    />
+                </ImgSection>
                 <Desc_QtyContainer>
                     <Desc_Qty_Price>
                         <Card_Title_container>
