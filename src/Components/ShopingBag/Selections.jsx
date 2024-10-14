@@ -163,7 +163,7 @@ const CustomMenuItem = styled(MenuItem)(({ theme }) => ({
 }));
 
 const Selections = () => {
-    const [qty, setQty] = useState("Qty:1");
+    const [qty, setQty] = useState(`Qty:${1}`);
 
     const handleChange = (event) => {
         setQty(event.target.value);
@@ -199,7 +199,7 @@ const Selections = () => {
                                                 vertical: "bottom",
                                                 horizontal: "center",
                                             },
-                                            getContentAnchorEl: null, // Disable auto-anchoring to ensure it opens upward
+                                            getcontentanchorel: null, // Disable auto-anchoring to ensure it opens upward
                                             PaperProps: {
                                                 style: {
                                                     padding: 0, // Remove padding from the Paper component (which wraps the dropdown list)
@@ -212,13 +212,9 @@ const Selections = () => {
                                             },
                                         }}
                                     >
-                                        {Array.from({ length: 21 }, (_, i) =>
-                                            i != 0 ? (
-                                                <CustomMenuItem key={i} value={`Qty:${i}`}>{`Qty:${i}`}</CustomMenuItem>
-                                            ) : (
-                                                <CustomMenuItem key={i} value={`Qty:${i}`}>{`Qty:${i + 1}`}</CustomMenuItem>
-                                            )
-                                        )}
+                                        {Array.from({ length: 20 }, (_, i) => (
+                                            <CustomMenuItem key={i} value={`Qty:${i + 1}`}>{`Qty:${i + 1}`}</CustomMenuItem>
+                                        ))}
                                     </CustomSelect>
                                 </FormControl>
                             </Qty>
