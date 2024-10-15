@@ -15,7 +15,7 @@ const MainContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down("md")]: {
         width: "100%",
         minHeight:'fit-content',
-        gap:'1rem'
+        gap:'1.5rem'
     },
 }));
 
