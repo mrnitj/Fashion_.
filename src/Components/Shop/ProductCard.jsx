@@ -79,7 +79,7 @@ const Title = styled(Typography)(({ theme }) => ({
     fontSize: ".75em",
     fontWeight: 600,
     fontFamily: "inherit",
-    color:'#00000099',
+    color: "#00000099",
     letterSpacing: ".04em",
     [theme.breakpoints.down("sm")]: {
         fontSize: "0.6em",
@@ -140,7 +140,10 @@ const ProductCard = ({ products, index }) => {
                     </IconContainerIcon>
                 </IconContainer>
                 <img className="img" src={products.img} alt={products.title} />
-                <Hoverd onClick={() => navigate("/view")} sx={{ display: hoveredCard === index ? "block" : "none" }}>
+                <Hoverd
+                    onClick={() => navigate(`/view/${products.id}`)}
+                    sx={{ display: hoveredCard === index ? "block" : "none" }}
+                >
                     <HoverdImg>
                         <img className="img" src={products.img} alt="image" />
                     </HoverdImg>
@@ -148,9 +151,7 @@ const ProductCard = ({ products, index }) => {
                         <Title>medium backbag with gucci logo</Title>
                         <Price_Link>
                             <Price>$ 1,100</Price>
-                            <ShopNow to={"/view"} component={Link}>
-                                shop now
-                            </ShopNow>
+                            <ShopNow component={Link}>shop now</ShopNow>
                         </Price_Link>
                     </TitlePriceContainer>
                 </Hoverd>
