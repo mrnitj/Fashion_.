@@ -8,11 +8,13 @@ import MenShop from "./Pages/Shop/MenShop";
 import WomenShop from "./Pages/Shop/WomenShop";
 import ProductView from "./Pages/Shop/ProductView";
 import ShopingBag from "./Pages/Shop/ShopingBag";
+import ScrollToTop from "./Pages/ScrollToTop";
 
 const App = () => {
     return (
         <>
             <Router>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
