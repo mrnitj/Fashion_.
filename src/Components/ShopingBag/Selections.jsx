@@ -19,7 +19,6 @@ const MainHead = styled(Typography)(({ theme }) => ({
     borderBottom: "1px solid grey",
     fontFamily: "inherit",
 }));
-const CardContainer = styled(Box)(({ theme }) => ({}));
 const ItemCard = styled(Box)(({ theme }) => ({
     fontSize: "1rem",
     minHeight: "14.813rem",
@@ -182,7 +181,6 @@ const Selections = () => {
     return (
         <MainContainer>
             <MainHead>your selections</MainHead>
-            {/* <CardContainer> */}
             <ItemCard>
                 <ImgSection>
                     <img
@@ -247,7 +245,6 @@ const Selections = () => {
                     </ActionContainer>
                 </Desc_QtyContainer>
             </ItemCard>
-            {/* </CardContainer> */}
         </MainContainer>
     );
 };
