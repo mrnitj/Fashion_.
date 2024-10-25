@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const MainContainer = styled(Box)({
     flex: 1,
+    // width:'100%',
     fontSize: "1rem",
     padding: "0 .5rem",
     fontFamily: "mina",

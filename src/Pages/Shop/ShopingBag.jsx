@@ -85,9 +85,8 @@ const ContetntSubContainer = styled(Box)({
 const Contents = styled(Box)(({ theme }) => ({
     display: "flex",
     maxWidth: "75rem",
-    // backgroundColor: "#3d3d4433",
     margin: "0 auto",
-    gap:'1rem',
+    gap: "1rem",
     padding: "3.313rem 0 ",
     [theme.breakpoints.down("md")]: {
         flexDirection: "column",

@@ -14,8 +14,8 @@ const MainContainer = styled(Box)(({ theme }) => ({
     gap: "3rem",
     [theme.breakpoints.down("md")]: {
         width: "100%",
-        minHeight:'fit-content',
-        gap:'1.5rem'
+        minHeight: "fit-content",
+        gap: "1.5rem",
     },
 }));
 
@@ -25,7 +25,6 @@ const OrderHeading = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     fontFamily: "inherit",
     letterSpacing: "0.05em",
-    // width: "fit-content",
     position: "relative",
     paddingBottom: "1em",
     "&::after": {
@@ -106,6 +105,7 @@ const OthersBtn = styled(Typography)(({ theme }) => ({
     alignItems: "center",
     justifyContent: "center",
     gap: "0.5em",
+    color: "#000",
 
     "& .btnlogo": {
         height: "20px",
@@ -146,7 +146,7 @@ const OrderSummary = () => {
                         alt=""
                     />
                 </OthersBtn>
-                <Typography sx={{textAlign:'center', fontSize:'0.8em'}}>OR</Typography>
+                <Typography sx={{ textAlign: "center", fontSize: "0.8em" }}>OR</Typography>
                 <OthersBtn component={Link}>
                     pay with
                     <img
